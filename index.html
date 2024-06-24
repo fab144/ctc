@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <div class="game1">
+            Score:&nbsp;<span class="number"><p>0</p></span> 
+        </div>
+        <div class="game2">
+            Combo:&nbsp;<span class="combo-tracker"><p>0</p></span>x
+        </div>
+        <div class="game3">
+            Percentage:&nbsp;<span class="percentage-tracker"><p>0</p></span>%
+        </div>
+    </div>
+    <div class="options">
+        <p>Press S or X for a 300</p>
+        <p>Press D for a 100</p>
+        <p>Press C for a 50</p>
+        <p>Press E to reset combo (or miss)</p>
+        <p>Press R to reset all</p>
+        <h2>Options!</h2>
+        Score multiplier:&nbsp;<span class="score-multiplier"><p>1.00</p></span>x
+        <form>
+            <input type="checkbox" id="hidden" name="Hidden" value="HD" autocomplete="off">
+            <label for="Hidden"> Hidden </label><br>
+            <input type="checkbox" id="hardrock" name="HardRock" value="HR" autocomplete="off">
+            <label for="HardRock"> Hardrock </label><br>
+            <input type="checkbox" id="doubletime" name="DoubleTime" value="DT" autocomplete="off">
+            <label for="DoubleTime"> Double Time </label><br>
+            <input type="checkbox" id="flashlight" name="FlashLight" value="FL" autocomplete="off">
+            <label for="FlashLight"> Flashlight </label><br>
+        </form>
+        <h2>Stats</h2>
+        <p>300</p>
+        <p>100</p>
+        <p>50</p>
+        <p>Miss</p>
+    </div>
+</body>
+<script src="script.js"></script> 
+</html>

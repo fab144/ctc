@@ -1,0 +1,24 @@
+
+
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 30vh;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.game1 , .game2, .game3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+.score-multiplier p{
+    display:inline;
+}
