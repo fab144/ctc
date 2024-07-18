@@ -19,6 +19,10 @@
 
 
 
-.score-multiplier p{
+.score-multiplier p, .diff-modifier p{
     display:inline;
+}
+
+.diff-modifier input{
+    display: flex;
 }

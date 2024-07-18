@@ -16,6 +16,12 @@ let hr = document.querySelector("#hardrock");
 let hd = document.querySelector("#hidden");
 let dt = document.querySelector("#doubletime");
 let fl = document.querySelector("#flashlight");
+let hp = document.querySelector("#HP");
+let cs = document.querySelector("#CS");
+let od = document.querySelector("#OD");
+// let valHP = hp.value;
+// let valCS = cs.value;
+// let valOD = od.value;
 
 //all the event listener
 document.addEventListener("keydown", keyBind);
@@ -23,6 +29,10 @@ hd.addEventListener("change", modHD);
 hr.addEventListener("change", modHR);
 dt.addEventListener("change", modDT);
 fl.addEventListener("change", modFL);
+hp.addEventListener("change", hpDrain);
+hp.addEventListener("change", hpDrain);
+cs.addEventListener("change", circleSize);
+od.addEventListener("change", overallDiff);
 
 //keybind system
 function keyBind(event){
@@ -48,7 +58,7 @@ function keyBind(event){
 
 //formula for points
 function scoringSystem(){
-    scoreFormula = 1 + ((combo-1)*multiplier/25);
+    scoreFormula = 1 + ((combo-1)*diffMultiplier*multiplier/25);
     // console.log(scoreFormula);
 }
 
@@ -85,6 +95,7 @@ function ppSystem(){
 //gain 300 pointsx
 function gainFull(event){
     comboTrack();
+    diffMultiplierCalc();
     scoringSystem();
     score = score + 300 * scoreFormula;
     hits = hits + 1;
@@ -96,6 +107,7 @@ function gainFull(event){
 //gain 100 points
 function gain100(event){
     comboTrack();
+    diffMultiplierCalc();
     scoringSystem();
     score = score + 100 * scoreFormula;
     hits = hits + 1;
@@ -107,6 +119,7 @@ function gain100(event){
 //gain 50 points
 function gain50(event){
     comboTrack();
+    diffMultiplierCalc();
     scoringSystem();
     score = score + 50 * scoreFormula;
     hits = hits + 1;
@@ -173,6 +186,7 @@ function accDisplay() {
 }
 
 //---------------------------------MODS---------------------------------//
+
 
 //hidden mod
 function modHD() {
@@ -241,3 +255,36 @@ function modFL() {
       scoreMulti.append(displayScoreMulti);
     }
   }
+
+
+//---------------------------------Difficulty Modifier---------------------------------//
+
+//HP Drain
+function hpDrain(){
+  valHP = hp.value;
+  let hpDrainVal = document.querySelector(".hp-value");
+  hpDrainVal.innerHTML = valHP;
+  valHP = parseFloat(valHP);
+}
+//Circle Size
+function circleSize(){
+  valCS = cs.value;
+  let circleSizeVal = document.querySelector(".cs-value");
+  circleSizeVal.innerHTML = valCS;
+  valCS = parseFloat(valCS);
+}
+//Overall Difficulty
+function overallDiff(){
+  valOD = od.value;
+  let overallDiffVal = document.querySelector(".od-value");
+  overallDiffVal.innerHTML = valOD;
+  valOD = parseFloat(valOD);
+}
+
+function diffMultiplierCalc(){
+  hpDrain();
+  circleSize();
+  overallDiff();
+  diffMultiplier = Math.round((valHP + valCS + valOD)/ 38 * 5);
+  console.log("difficuty multipler: " + diffMultiplier);
+}
