@@ -8,7 +8,6 @@
     width: 100vw;
     height: 30vh;
     font-size: 25px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .game1 , .game2, .game3{
@@ -19,6 +18,25 @@
 
 
 
-.score-multiplier p{
+.score-multiplier p, .diff-modifier p{
     display:inline;
+}
+
+.diff-modifier input{
+    display: flex;
+}
+
+.options{
+    background-color: pink;
+    height: 90vh;
+    overflow-y: scroll;
+    padding:3px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+body{
+    display:flex;
+    flex-direction: row-reverse;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 0;
 }
